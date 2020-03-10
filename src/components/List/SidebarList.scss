@@ -1,0 +1,86 @@
+.sidebar {
+  &__list {
+    list-style: none;
+    margin-bottom: 15px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 5px;
+    border-radius: 5px;
+
+    &.active .delete{
+      display: block;
+    }
+
+    &.active {
+      background-color: #fff;
+      box-shadow: 1px 1px 5px rgba(0,0,0,.1);
+    }
+    
+    &.active .sidebar__link {
+      color: #6e6e6e;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    color:  #9b9b9b;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #6e6e6e;
+    }
+  }
+
+  &__mark {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 2px;
+  }
+
+  &__add {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #9b9b9b;
+
+    &:hover {
+      color: #6e6e6e;
+    }
+  }
+}
+
+.delete {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  padding: 5px;
+  font-size: 16px;
+  background-color: rgba(0,0,0,0);
+  color: #9b9b9b;
+  cursor: pointer;
+  transform: translateY(-52%);
+
+  &:hover {
+    color: #6e6e6e;
+  }
+}
+
+.plus {
+  font-size: 24px;
+  margin-right: 5px;
+}

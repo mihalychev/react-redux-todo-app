@@ -1,0 +1,74 @@
+.tasks {
+  &__list {
+    background-color: #f8f8f8;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #6e6e6e;
+    font-size: 16px;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.1);
+  }
+
+  &__radio {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fcfcfc;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 50%;
+
+    &_complete::before {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 20px;
+      top: 5px;
+      right: 11px;
+      position: absolute;
+      transform: rotate(30deg);
+      background-color: #00aa00;
+    }
+
+    &_complete::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 2px;
+      height: 10px;
+      bottom: 5px;
+      left: 10px;
+      transform: rotate(-30deg);
+      background-color: #00aa00;
+    }
+  }
+
+  &__text {
+    padding: 20px 0;
+
+    &_complete {
+      color: #aaa;
+      text-decoration: line-through;
+    }
+  }
+
+  &__delete {
+    position: absolute;
+    right: 20px;
+    padding: 5px;
+    font-size: 20px;
+    color: #aaa;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+
+    &:hover {
+      color: #6e6e6e;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.main {
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 48px;
+    font-weight: 300;
+    color: #bbb;
+    margin-bottom: 50px;
+  }
+}
+
+.tasks {
+  position: relative;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3);
+}
+
+.tasks__add {
+  position: absolute;
+  background-color: rgba(0,0,0,0);
+  top: 5px;
+  right: 18px;
+  font-size: 44px;
+  font-weight: 300;
+  color: #aaa;
+  cursor: pointer;
+
+  &:hover {
+    color: #6e6e6e;
+  }
+}
