@@ -1,0 +1,73 @@
+.modal {
+  position: absolute;
+  display: flex;
+  max-width: 300px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+
+  &_hidden{
+    display: none;
+  }
+
+  &__input {
+    background-color: #eee;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    color: #6e6e6e;
+    font-size: 14px;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  &__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+  }
+
+  &__mark {
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__btn {
+    background-color: #00a500;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    width: 80%;
+    padding: 7px 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+    cursor: pointer;
+
+    &:hover {
+      background-color: green;
+    }
+  }
+
+  &__close {
+    background: #fff;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #aaa;
+
+    &:hover {
+      color: #6e6e6e;
+    }
+  }
+}

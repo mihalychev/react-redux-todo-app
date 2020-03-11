@@ -14,14 +14,17 @@ const Input = props => {
         
       }
     }
+    style={{display: (props.isHidden ? 'none' : 'block')}}
     />
   )
 }
 
 function mapStateToProps(state) {
   let [ dir ] = state.dirs.filter(dir => dir.isActive === true);
+  let dirId = dir !== undefined ? dir.id : null
   return {
-    dirId: dir.id
+    dirId: dirId,
+    isHidden: dirId === null ? true : false
   }
 }
 

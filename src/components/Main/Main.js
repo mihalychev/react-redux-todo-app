@@ -19,7 +19,6 @@ const Main = props => {
         <Route>
           <section className='tasks'>
             <Input />
-            {/* <button className='tasks__add'>+</button> */}
             <List className='tasks__list'>
             { 
               props.tasks.map((item, index) => {
@@ -50,10 +49,11 @@ const Main = props => {
 
 function mapStateToProps(state) {
   let [ dir ] = state.dirs.filter(dir => dir.isActive === true);
-  let [ todo ] = state.todos.filter(todo => todo.id === dir.id)
+  let dirId = dir !== undefined ? dir.id : null
+  let [ todo ] = state.todos.filter(todo => todo.id === dirId);
   return {
-    dirId: dir.id,
-    tasks: todo.tasks
+    dirId: dirId,
+    tasks: dir !== undefined ? todo.tasks : []
   }
 }
 

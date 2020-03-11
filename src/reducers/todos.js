@@ -1,50 +1,4 @@
-const initialState = [
-  {
-    id: 0,
-    tasks: [
-      {
-        id: 0,
-        text: 'React',
-        isCompleted: true
-      },
-      {
-        id: 1,
-        text: 'Redux',
-        isCompleted: false
-      }
-    ]
-  },
-  {
-    id: 1,
-    tasks: [
-      {
-        id: 0,
-        text: 'React2',
-        isCompleted: false
-      },
-      {
-        id: 1,
-        text: 'Redux2',
-        isCompleted: false
-      }
-    ]
-  },
-  {
-    id: 2,
-    tasks: [
-      {
-        id: 0,
-        text: 'React3',
-        isCompleted: false
-      },
-      {
-        id: 1,
-        text: 'Redux3',
-        isCompleted: false
-      }
-    ]
-  }
-]
+const initialState = []
 
 export default function dirs(state = initialState, action) {
   switch (action.type) {
@@ -69,6 +23,15 @@ export default function dirs(state = initialState, action) {
           }]
         } : todo
       )
+    case 'ADD_DIR':
+      return [
+        ...state, {
+          id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
+          tasks: []
+        }
+      ]
+    case 'REMOVE_DIR':
+      return state.filter(todo => todo.id !== action.id)
     case 'REMOVE_TASK':
       return state.map(todo => 
         todo.id === action.dirId ? 
