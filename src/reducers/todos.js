@@ -17,7 +17,7 @@ export default function dirs(state = initialState, action) {
         todo.id === action.dirId ? 
         {...todo, 
           tasks: [...todo.tasks, {
-            id: todo.tasks.length,
+            id: todo.tasks.reduce((maxId, task) => Math.max(task.id, maxId), -1) + 1,
             text: action.text,
             isCompleted: false
           }]
