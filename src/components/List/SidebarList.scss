@@ -35,6 +35,11 @@
     text-decoration: none;
     cursor: pointer;
 
+    &-text {
+      max-width: 125px;
+      word-wrap: break-word;
+    }
+
     &:hover {
       color: #6e6e6e;
     }

@@ -50,7 +50,9 @@
   }
 
   &__text {
+    max-width: 390px;
     padding: 20px 0;
+    word-wrap: break-word;
 
     &_complete {
       color: #aaa;

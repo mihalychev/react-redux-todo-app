@@ -26,7 +26,7 @@ const Sidebar = props => {
                   onClick={() => props.toggleDir(item.id)}
                 >
                   <span className='sidebar__mark' style={{background: item.hex}}></span>
-                  {item.title}
+                  <p className='sidebar__link-text'>{item.title}</p>
                 </Link>
                 <button className='delete' onClick={() => props.removeDir(item.id)}>x</button>
               </ListItem>
