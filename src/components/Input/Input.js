@@ -8,8 +8,11 @@ const Input = props => {
     <input className='tasks__input' type='text' placeholder='Добавьте задачу' onKeyDown={
       (event) => {
         if (event.keyCode === 13) {
-          props.addTask(props.dirId, event.target.value);
-          event.target.value = '';
+          if (event.target.value === '') alert('Заполните поле ввода задачи!')
+          else {
+            props.addTask(props.dirId, event.target.value);
+            event.target.value = '';
+          }
         }
         
       }

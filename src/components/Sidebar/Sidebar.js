@@ -58,8 +58,12 @@ const Sidebar = props => {
           }
         </List>
         <button className='modal__btn' onClick={() => {
-          props.addDir(props.modal.title, ...props.modal.colors.filter(color => color.isActive));
-          dirInput.current.value = '';
+          if (props.modal.title === '') alert('Заполните поле ввода названия папки!')
+          else {
+            props.addDir(props.modal.title, ...props.modal.colors.filter(color => color.isActive));
+            dirInput.current.value = '';
+            props.setInputValue('')
+          }
         }}
         >
         Добавить
