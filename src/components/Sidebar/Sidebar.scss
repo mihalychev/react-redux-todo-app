@@ -1,4 +1,6 @@
 .sidebar {
+  position: sticky;
+  top: 0px;
   max-width: 200px;
   height: calc(100vh - 100px);
   padding: 50px 60px;
